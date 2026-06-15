@@ -41,6 +41,24 @@ let packet_type_of_int (type_val : int) =
   | 14 -> Ok DISCONNECT
   | n -> Error (Invalid_type_value_int n)
 
+let int_of_packet_type (packet_type : packet_type) =
+  match packet_type with
+  | RESERVED -> 0
+  | CONNECT -> 1
+  | CONNACK -> 2
+  | PUBLISH -> 3
+  | PUBACK -> 4
+  | PUBREC -> 5
+  | PUBREL -> 6
+  | PUBCOMP -> 7
+  | SUBSCRIBE -> 8
+  | SUBACK -> 9
+  | UNSUBSCRIBE -> 10
+  | UNSUBACK -> 11
+  | PINGREQ -> 12
+  | PINGRESP -> 13
+  | DISCONNECT -> 14
+
 let packet_type_of_string (type_val : string) =
   match String.lowercase_ascii type_val with
   | "0" | "reserved" -> Ok RESERVED
