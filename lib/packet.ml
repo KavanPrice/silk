@@ -5,7 +5,7 @@ type fixed_header = {
 
 type packet_identifier = int
 type variable_header = packet_identifier option
-type payload = string
+type payload = string option
 
 type packet = {
   fixed_header : fixed_header;
