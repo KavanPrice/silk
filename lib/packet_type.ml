@@ -39,7 +39,7 @@ let packet_type_of_int (type_val : int) =
   | 12 -> Ok PINGREQ
   | 13 -> Ok PINGRESP
   | 14 -> Ok DISCONNECT
-  | n -> Error (Invalid_type_value_int n)
+  | n -> Error (Type_error (Invalid_type_value_int n))
 
 let int_of_packet_type (packet_type : packet_type) =
   match packet_type with
@@ -76,4 +76,4 @@ let packet_type_of_string (type_val : string) =
   | "12" | "pingreq" -> Ok PINGREQ
   | "13" | "pingresp" -> Ok PINGRESP
   | "14" | "disconnect" -> Ok DISCONNECT
-  | other -> Error (Invalid_type_value_string other)
+  | other -> Error (Type_error (Invalid_type_value_string other))
