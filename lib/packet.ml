@@ -1,6 +1,7 @@
 type fixed_header = {
   packet_type : Packet_type.packet_type;
   flags : Flags.fixed_header_flags;
+  remaining_length : int;
 }
 
 type variable_header =
