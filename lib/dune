@@ -1,2 +1,4 @@
 (library
- (name silk))
+ (name silk)
+ (public_name silk)
+ (libraries angstrom))

@@ -19,7 +19,7 @@
  (name silk)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml)
+ (depends ocaml angstrom)
  (tags
   ("add topics" "to describe" your project)))
 
