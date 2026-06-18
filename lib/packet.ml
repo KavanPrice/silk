@@ -4,7 +4,13 @@ type fixed_header = {
 }
 
 type packet_identifier = int
-type variable_header = packet_identifier option
+
+type variable_header =
+  | Connect_header of { keepalive : int; connect_flags : int }
+  | Publish_header of { topic : string; packet_id : int option }
+  | Packet_id of int
+  | No_variable_header
+
 type payload = string option
 
 type packet = {
