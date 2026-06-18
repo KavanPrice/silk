@@ -3,7 +3,8 @@ type fixed_header = {
   flags : Flags.fixed_header_flags;
 }
 
-type variable_header = string
+type packet_identifier = int
+type variable_header = packet_identifier option
 type payload = string
 
 type packet = {
